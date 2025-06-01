@@ -8,8 +8,8 @@ function Cart({ cart, removeFromCart }) {
         <ul>
           {cart.map((item, index) => (
             <li key={index}>
-              {item.name} - Rp{item.price}
-              <button onClick={() => removeFromCart(index)}>Hapus</button>
+              {item.name} - Rp{item.price} x{item.quantity}
+              <button onClick={() => removeFromCart(item.id)}>Hapus</button>
             </li>
           ))}
         </ul>
@@ -17,5 +17,4 @@ function Cart({ cart, removeFromCart }) {
     </div>
   );
 }
-
 export default Cart;

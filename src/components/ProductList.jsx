@@ -1,7 +1,7 @@
 function ProductList({ products, addToCart }) {
   return (
     <div>
-      <h2>Daftar Barang</h2>
+      <h2>Daftar Produk</h2>
       <ul>
         {products.map((product) => (
           <li key={product.id}>
