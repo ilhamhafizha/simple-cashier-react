@@ -8,4 +8,5 @@
 - **Reset:** Mengosongkan keranjang belanja.
 
 ## Screenshot
-![image](https://github.com/user-attachments/assets/36f62c3c-a531-47e6-a484-b2ab2b6ad165)
+![image](https://github.com/user-attachments/assets/1940021f-213b-4907-8fd3-3302aa42f8c7)
+
