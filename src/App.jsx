@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+
+import "./App.css";
+import ProductList from "./components/ProductList";
+import Cart from "./components/Cart";
+import Receipt from "./components/Receipt";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [products] = useState([
+    { name: "Indomie", price: 3000 },
+    { name: "Susu", price: 10000 },
+    { name: "Kopi", price: 5000 },
+  ]);
+
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
+
+  const removeFromCart = (indexToRemove) => {
+    const updatedCart = cart.filter((_, index) => index !== indexToRemove);
+    setCart(updatedCart);
+  };
+
+  const resetCart = () => {
+    setCart([]);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div style={{ padding: "20px" }}>
+        <h1>Aplikasi Belanja</h1>
+        <ProductList products={products} addToCart={addToCart} />
+        <Cart cart={cart} removeFromCart={removeFromCart} />
+        <Receipt cart={cart} />
+        <button onClick={resetCart}>Reset</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
