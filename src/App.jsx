@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <div style={{ padding: "20px" }}>
-        <h1>Aplikasi Belanja</h1>
+        <h1>Cashier Simple App</h1>
         <ProductList products={products} addToCart={addToCart} />
         <Cart cart={cart} removeFromCart={removeFromCart} />
         <Receipt cart={cart} />
